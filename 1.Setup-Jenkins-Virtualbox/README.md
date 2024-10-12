@@ -13,14 +13,11 @@ Download Ubuntu 22.04.5 Desktop (64-bit)
 3. Install Ubuntu in VM
 Use the default VirtualBox user (vboxuser) and default password
 
-4. Switch to the root user and update your Ubuntu system, run the following commands:
-# Switch to root user
+4. Switch to root user and update system packages
 su - 
-# Update system packages
 sudo apt update  
 
-5. Install Java
-Java is required for Jenkins. Follow this tutorial for detailed instructions on installing Java
+5. Java is required for Jenkins
 # Install the Java Runtime Environment (JRE)
 sudo apt install default-jre
 # Verify the Java version
@@ -31,7 +28,7 @@ sudo apt install default-jdk
 javac -version  
 
 6. Install Jenkins
-Add the Jenkins key and repository
+Run the following commands to add the Jenkins key and repository
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
@@ -47,15 +44,9 @@ sudo systemctl start jenkins
 # Check Jenkins service status 
 sudo systemctl status jenkins 
 
-7. To access Jenkins from your host machine, you'll need to set up port forwarding in VirtualBox to make the Jenkins web interface available.
-
-Open VirtualBox and navigate to the settings of your Ubuntu virtual machine.
-Go to the Network section
-Select Port Forwarding and add a new rule
-Host IP: 127.0.0.1
-Host Port: 8080
-Guest Port: 8080
-Once done, you can access Jenkins from your host machine’s browser by navigating to http://127.0.0.1:8080
+7. To access Jenkins from your host machine, you'll need to set up port forwarding in VirtualBox
 
 8. To get the initial Jenkins admin password, use the following command
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+9. Access jenkins http://127.0.0.1:8080
