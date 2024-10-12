@@ -19,7 +19,7 @@ Download Ubuntu 22.04.5 Desktop (64-bit)
     update system packages,
         sudo apt update  
 
-5. Java is required for Jenkins
+# Java is required for Jenkins
     Install the Java Runtime Environment (JRE)
         sudo apt install default-jre
     Verify the Java version
@@ -29,7 +29,7 @@ Download Ubuntu 22.04.5 Desktop (64-bit)
     Verify the JDK version
         javac -version  
 
-6. Install Jenkins
+# Install Jenkins
     Run the following commands to add the Jenkins key and repository
         sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
@@ -46,9 +46,9 @@ Download Ubuntu 22.04.5 Desktop (64-bit)
     Check Jenkins service status 
         sudo systemctl status jenkins 
 
-7. To access Jenkins from your host machine, you'll need to set up port forwarding in VirtualBox
+# To access Jenkins from your host machine, you'll need to set up port forwarding in VirtualBox
 
-8. To get the initial Jenkins admin password, use the following command
+# To get the initial Jenkins admin password, use the following command
     sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-9. Access jenkins http://127.0.0.1:8080
+# Access jenkins http://127.0.0.1:8080
